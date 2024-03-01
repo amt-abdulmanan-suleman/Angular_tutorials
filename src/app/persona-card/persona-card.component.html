@@ -1,0 +1,8 @@
+<div *ngxUnless="!persona">
+    <p >{{persona.name}}</p>
+    <p>{{persona.age}}</p>
+    <p>{{persona.occupation}}</p>
+    <ol>
+        <li *ngFor="let interest of persona.interests">{{interest}}</li>
+    </ol>
+</div>
