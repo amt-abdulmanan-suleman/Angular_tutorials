@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { PersonaCardComponent } from "./persona-card/persona-card.component";
@@ -6,6 +6,7 @@ import { HighlightedDirective } from './directives/highlighted.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { PersonasService } from './services/personas.service';
+import { APP_CONFIG, AppConfig, CONFIG_TOKEN } from './config';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -16,8 +17,8 @@ import { PersonasService } from './services/personas.service';
 })
 export class AppComponent implements OnInit {
   personas$: Observable<any> | undefined;
-  constructor(private personaServices: PersonasService) {
-
+  constructor(private personaServices: PersonasService, @Inject(CONFIG_TOKEN) private config: AppConfig) {
+    console.log(config)
   }
 
   ngOnInit(): void {
