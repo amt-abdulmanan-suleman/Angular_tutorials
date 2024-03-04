@@ -1,8 +1,13 @@
-<div *ngxUnless="!persona">
-    <p >{{persona.name}}</p>
-    <p>{{persona.age}}</p>
+<div>
+    <p >{{persona.title}}</p>
+    <p>{{persona.body}}</p>
     <p>{{persona.occupation}}</p>
     <ol>
         <li *ngFor="let interest of persona.interests">{{interest}}</li>
     </ol>
+</div>
+
+<div>
+    <input #body [value]="persona.title" />
+    <button (click)="saveChange(body.value)">save</button>
 </div>

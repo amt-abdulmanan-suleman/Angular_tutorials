@@ -1,7 +1,7 @@
-<ng-container>
+<ng-container *ngIf="personas$ | async as personas">
 
   @for (persona of personas; track persona.id){
-  <app-persona-card [persona]="persona"/>
+  <app-persona-card (postChange)="postChangeEmit($event)" [persona]="persona"/>
   }
 
 
