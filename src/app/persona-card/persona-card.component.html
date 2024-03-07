@@ -8,6 +8,6 @@
 </div>
 
 <div>
-    <input #body [value]="persona.title" />
+    <input #body [value]="persona.title" (keyup)="update(body.value)" />
     <button (click)="saveChange(body.value)">save</button>
 </div>

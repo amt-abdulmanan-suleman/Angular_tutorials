@@ -18,7 +18,7 @@ import { APP_CONFIG, AppConfig, CONFIG_TOKEN } from './config';
 export class AppComponent implements OnInit {
   personas$: Observable<any> | undefined;
   constructor(private personaServices: PersonasService, @Inject(CONFIG_TOKEN) private config: AppConfig) {
-    console.log(config)
+
   }
 
   ngOnInit(): void {
