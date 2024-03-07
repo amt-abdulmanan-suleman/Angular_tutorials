@@ -6,14 +6,15 @@ import { HighlightedDirective } from './directives/highlighted.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { PersonasService } from './services/personas.service';
-import { APP_CONFIG, AppConfig, CONFIG_TOKEN } from './config';
+import { AppConfig, CONFIG_TOKEN } from './config';
+import { CustomPipes } from './custom.pipes';
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   imports: [RouterOutlet, CommonModule, PersonaCardComponent, HighlightedDirective, HttpClientModule],
-  providers: [PersonasService]
+  providers: [PersonasService],
 })
 export class AppComponent implements OnInit {
   personas$: Observable<any> | undefined;

@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { HighlightedDirective } from '../directives/highlighted.directive';
 import { NgxUnlessDirective } from '../directives/ngx-unless.directive';
+import { CustomPipes } from '../custom.pipes';
 
 
 @Component({
